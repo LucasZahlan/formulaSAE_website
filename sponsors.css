@@ -8,9 +8,14 @@
     font-weight: 900;
     src: url("assets/fonts/formula1-black-webfont.woff") format("woff");
 }
+
 @font-face { 
-    font-family: HelveticaNeue;
-    src: url("assets/fonts/helveticaneuemedium-webfont.woff") format("woff");
+    font-family: Lato-Regular;
+    src: url("assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face { 
+    font-family: Lato-Light;
+    src: url("assets/fonts/Lato-Light.ttf") format("truetype");
 }
 
 /*this html element makes scrolling smooth for when a button is pressed */
@@ -21,8 +26,8 @@ html {
 /*general styles*/
 body {
   margin: 0;
-  font-family: HelveticaNeue;
-  background-color: #FFAE03;
+  font-family: Lato-Regular;
+  background-color: #932339;
   overflow-x: hidden;
 }
 .wrapper {
@@ -78,12 +83,26 @@ section.sponsorIntro {
 
 
 /* section on first page with text and link to the sponsorship package */
+
 section.introText {
+    background-color: #932339; 
+    border-radius: 15px; /* Smooth, modern corners */
+    padding: 2em; /* Creates space around the text for readability */
+    color: #333; /* Dark gray for a professional and softer contrast */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
+    font-family: Lato-Regular; /* Matches your general styles */
+    font-size: 1em; /* Comfortable reading size */
+    text-align: center; /* Clean and professional alignment */
+    margin: 2em auto; /* Centers the block and adds spacing around */
+    height: fit-content;
+    width: 100%; /* Prevents the text from taking the full width */
+    max-width: 800px; /* Maintains a readable width on larger screens */
     display: flex;
     gap: 1em;
-    height: fit-content;
-    width: 100%;
+   
 }
+
+
 section.introText label {
     margin: 1em 0em 0 1em;
     max-width: 60%;
@@ -101,22 +120,17 @@ label:hover {
 }
 label p {
     margin: 0;
-    color: black;
-    font-size: 1.2em;
-    cursor: pointer;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 15;
-    -webkit-box-orient: vertical;
-    overflow-y: hidden;
-}
+    color: white;
+        font-size: calc(1vw); /* Scales based on viewport */
+        max-width: fit-content; /* Shrinks the text to fit its content */
+        text-align: center; /* Center-align text */
+     /* Center in the container */
+    }
+    
 input {
     display: none;
 }
-label input:checked ~ div.textFrame p {
-    display: unset;
-    overflow: unset;
-}
+
 
 
 
@@ -129,7 +143,7 @@ label input:checked ~ div.textFrame p {
     justify-content: center;
 }
 .sponsorshipPackage .packageTitleFrame {
-    background-color: #932339;
+    background-color: #FFAE03;
     height: fit-content;
     border-radius: 20px;
 }
@@ -202,7 +216,7 @@ section.categories {
     margin-top: 2em;
     height: 12vmin;
     width: 75vmin;
-    background-color: #932339;
+    background-color: #FFAE03;
     border-radius: 15px;
 }
 .categories p.date {
@@ -250,6 +264,7 @@ section.categories {
     position: relative; /* this is so we can put an invisible element over it so when scrolled to there is some space */
     justify-content: center;
     width: 50%;
+    height: 93%;
     border-radius: 20px;
     outline: white;
     padding: .5em;
@@ -295,35 +310,50 @@ section.categories {
     justify-content: center;
     align-items: center;
 
-    width: 80%;
-    height: 15em;
-    margin-top: 2em;
-    max-width: 35em;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 2em;
 
-    background: rgba(230,230,230,0.33);
-    border-radius: 25px;
-    outline: white;
+    background: linear-gradient(135deg, #000000, #4b0082); /* Bold gradient background */
+    border: 4px solid #FFD700; /* Gold outline for prestige */
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); /* Shadow for elevation */
+    text-align: center;
+    color: white;
+    animation: pulse 3s infinite; /* Add attention-grabbing animation */
+}
 
-    &:hover {
-        outline: white 1.5px solid;
-        outline-offset: -1.5px;
-        transition: 0.2s;
-        background-color: rgba(250, 249, 249, 0.4);
-    }
-}
-.titleSponsor a {
-    position: relative;
-    width: 80%;
-    transition: all .3s;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-.titleSponsor:hover a {
-    width: 85%;
-}
 .titleSponsor img {
-    width: 100%;
+    width: 80%; /* Large logo */
+    max-width: 400px;
+    margin-bottom: 1em;
+}
+
+.titleSponsor h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+    color: #FFD700; /* Gold color for the text */
+}
+
+.titleSponsor p {
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+/* Pulse animation for the sponsor box */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -343,6 +373,84 @@ section.categories {
 
 }
 
+
+/* for individual background colors of each tier*/
+
+/* Platinum Sponsor Styles */
+.platinumCategory {
+    border: 4px solid #E5E4E2; /* Stronger platinum border */
+    background: linear-gradient(135deg, #E5E4E2, #B0B0B0); /* Gradient for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for elevation */
+    border-radius: 20px;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+/* Gold Sponsor Styles */
+.goldCategory {
+    border: 4px solid #FFD700; /* Stronger gold border */
+    background: linear-gradient(135deg, #FFD700, #B8860B); /* Bold gold gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for elevation */
+    border-radius: 20px;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+/* Silver Sponsor Styles */
+.silverCategory {
+    border: 4px solid #C0C0C0; /* Stronger silver border */
+    background: linear-gradient(135deg, #C0C0C0, #808080); /* Gradient with bold silver tones */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for elevation */
+    border-radius: 20px;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+/* Bronze Sponsor Styles */
+.bronzeCategory {
+    border: 4px solid #CD7F32; /* Stronger bronze border */
+    background: linear-gradient(135deg, #CD7F32, #8B4513); /* Bold bronze gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for elevation */
+    border-radius: 20px;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+/* Frame Sponsor (shared styles) */
+.frameSponso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12em; /* Adjust height as needed */
+    width: 100%; /* Make it fully responsive */
+    margin: 1em 0;
+    border-radius: 15px;
+    overflow: hidden; /* Hide overflow for cleaner visuals */
+    background: rgba(255, 255, 255, 0.1); /* Light background color */
+}
+
+.frameSponso:hover {
+    transform: translateY(-5px); /* Subtle hover lift */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* More prominent hover effect */
+}
+
+.frameSponso a img {
+    width: 100%; /* Stretch to the container width */
+    height: 100%; /* Match container height */
+    object-fit: contain; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow */
+    max-height: 100%; /* Prevent overflow */
+    margin: 0 auto; /* Center alignment */
+    display: block; /* Inline issues prevention */
+}
+
+
+.category h1 {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    margin-bottom: 1em;
+}
 
 
 /* --------------------------------------------------------  */
@@ -443,7 +551,9 @@ li {
 /* menu section adapted to different screen sizes */
 
 /*for the burger menu*/
-@media only screen and (max-width: 750px) {
+
+/* gets rid of the main menu logo at 200px */
+@media only screen and (max-width: 220px) {
     .Logo {
         display: none;
     }
@@ -456,8 +566,8 @@ li {
     }
 }
 
-/* this gets rid of the burger menu when screen size is over 750px, and formats the header */
-@media only screen and (min-width: 750px) {
+/* this gets rid of the burger menu when screen size is over 800px, and formats the header */
+@media only screen and (min-width: 800px) {
     .menu {
         display: none;
     }
@@ -704,3 +814,48 @@ label.hidden {
 .frameSponso.two {
     transition-delay: 200ms;
 }
+
+
+
+.creators {
+    text-align: center;
+    padding: 10px;
+    
+  }
+  
+  .creators-title span {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.4em;
+  }
+  
+  .creator-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 10px;
+  }
+  
+  .creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .creator p {
+    margin-bottom: 8px;
+    font-size: 1.3em;
+    font-family: Formula1;
+    color: #ffffff;
+  }
+  
+  .linkedin {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .linkedin:hover {
+    transform: scale(1.1);
+  }
+  
