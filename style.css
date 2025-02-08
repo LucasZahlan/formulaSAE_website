@@ -13,9 +13,14 @@
     font-weight: 600;
     src: url("assets/fonts/futura_bold-webfont.woff") format("woff");
 }
+@font-face {
+    font-family: Lato-Regular;
+    font-weight: 400;
+    src: url("assets/fonts/Lato-Regular.ttf") format("truetype");
+}
 @font-face { 
-    font-family: HelveticaNeue;
-    src: url("assets/fonts/helveticaneuemedium-webfont.woff") format("woff");
+    font-family: Lato-Light;
+    src: url("assets/fonts/Lato-Light.ttf") format("truetype");
 }
 
 @keyframes RightToLeft { /*animation function for the sliding text*/
@@ -63,7 +68,7 @@ html {
 /*general styles*/
 body {
     margin: 0;
-    font-family: HelveticaNeue;
+    font-family: Lato-Regular;
     background: rgb(236 238 241);
     overflow-x: hidden;
     overscroll-behavior: none;
@@ -95,30 +100,25 @@ a {
     text-decoration: none;
     font-size: 1.3rem;
 }
+/* Use one fixed container with the background image */
 .home {
-    position: sticky;
+    position: fixed;
     top: 0;
-    /* height: 100%;
-    width: 100%; */
-    position: fixed; bottom:0; top:0; left:0; right:0; max-width: 100vw; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; /* Place behind all other content */
+    background: url('assets/HistoryPics/2024/IMG_4242.JPG') no-repeat center center;
+    background-size: cover;
 }
+
+
 #spacer {
     height: 100vh;
     background: transparent;
     display: flex;
     justify-content: center;
 }
-.home-image {
-    background: url('assets/backgrounds/HomeImage.JPG');
-
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position-x: 50%;
-    background-position-y: 50%;
-}
-
 /*1st page styling for header*/
 header { 
     position: fixed;
@@ -391,8 +391,8 @@ p.subhead {
 /*MEET OUR TEAMS SCROLLING TITLE (FOR DESKTOP), work in progress (neeeds to be changed in the media area*/
 
 
-/*PAGE 3 - SUBSYSTEMS*/
-section.subsystems {
+/*PAGE 3 - SUBSYSTEMS EDIT:: HISTORY NOW*/
+section.history {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -413,7 +413,6 @@ section.subsystems {
     margin-right: 0.75rem;
     border-radius: 25px;
     background: #FFAE03;
-    /* background-image: linear-gradient(0deg, #932339 0%, #FFAE03 20%); */
     padding: 1.38rem;
     width: 17.5625rem;
     height: 27.1875rem;
@@ -429,7 +428,7 @@ section.subsystems {
 .title.subsystem {
     display: none;
     margin-top: .5em;
-    font-size: 3.8rem;
+    font-size: 3.2rem;
     text-align: center;
     font-family:  Formula1;
     font-weight: 900;
@@ -446,6 +445,7 @@ section.subsystems {
     display: flex;
     height: 100%;
     flex-direction: column;
+    overflow: hidden;
 }
 .frame svg.arrowCard {
     display: none;
@@ -454,16 +454,30 @@ section.subsystems {
     object-fit: cover;
     height: 10.5rem;
     width: auto;
-    border-radius: 25px;
-    margin-top: -2em;
+    border-radius: 20px;
+    margin-top: -3em;
 }
+
 .text {
     color: black;
     text-align: left;
-    font-size: 1.31rem;
+    font-size: 1.2em;
     margin-top: 35px;
     height: fit-content;
+    overflow: hidden; /* Ensures no overflow */
+    white-space: normal; /* Prevents collapsing of text */
+    word-wrap: break-word; /* Ensures text wraps properly */
+    line-height: 1;
+    font-family: Lato-Regular;
 }
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centers text alignment for smaller devices */
+}
+
 
 /*basic framing settings for the team and sposnors section*/
 .sec {
@@ -786,8 +800,10 @@ section.creator {
 }
 
 /*for the burger menu and intro elements*/
-@media only screen and (max-width: 750px) {
-    .logo1 {
+
+/* gets rid of the main menu logo at 200px */
+@media only screen and (max-width: 220px) {
+    .Logo {
         display: none;
     }
     header {
@@ -797,23 +813,14 @@ section.creator {
     svg.menu {
         margin: 1em;
     }
-
-
-    /* for mobile */
-    .introFrame {
-        flex-direction: column;
-        gap: 4em;
-    }
-    .videoLogoFrame {
-        max-width: 100%;
-    }
 }
 
-/* this gets rid of the burger menu when screen size is over 750px, and formats the header */
-@media only screen and (min-width: 750px) {
+/* this gets rid of the burger menu when screen size is over 800px, and formats the header */
+@media only screen and (min-width: 800px) {
     .menu {
         display: none;
     }
+
 
     nav {
         transform: translateX(0);
@@ -894,19 +901,11 @@ label input {
     label {
         transition: all .1s !important;
     }
-    label input:checked ~ div.card {
-        height: 19em;
-        z-index: 3;
-
-        width: 17em;
-        outline: solid white 2px;
-        outline-offset: -2px;
-    }
 
 
-    /* SUBSYSTEMS REDESIGN FOR DESKTOP */
+    /* SUBSYSTEMS  NOW HISTORY REDESIGN FOR DESKTOP */
 
-    .title.subsystem {
+    .title.history {
         display: unset;
         font-size: 3.7rem;
         align-self: center;
@@ -927,11 +926,15 @@ label input {
     .card {
         justify-content: unset;
         margin: 0;
-        height: 16em;
+        height: 18em;
         width: 14em;
-        padding: .8em;
-        transition: all .5s;
-        overflow: hidden;
+        padding: 0.8em;
+        transition: all 0.5s;
+        overflow: hidden; /* Ensure nothing spills out of the card */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     /* makes it visible when in desktop format */
     .firstEmptySpace {
@@ -951,15 +954,7 @@ label input {
         margin: 0;
         position: relative;
     }
-    .frame p.text {
-        margin-top: .8em;
-        font-size: 1.2em;
-
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+    
     .frame svg.arrowCard {
         position: absolute;
         display: unset;
@@ -970,20 +965,9 @@ label input {
         width: 1em;
         left: 0.5em 
     }
-    .card:hover .frame svg.arrowCard {
-        -webkit-transform: rotate(-180deg);
-        transform: "";
-        transition: 0.2s;
-    }
-    label input:checked ~ div.card div.frame svg {
-        display: none;
-    }
-    /* when subsystem box is clicked it reveals all of the text */
-    label input:checked ~ div.card div.frame p.text {
-        display: unset;
-        overflow: unset;
-    }
     
+    /* when subsystem box is clicked it reveals all of the text */
+  
 
     .card-photo {
         margin: 0;
@@ -1068,3 +1052,48 @@ label input {
         transition: none;
     }
 }
+
+
+
+.creators {
+    text-align: center;
+    padding: 10px;
+    
+  }
+  
+  .creators-title span {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.4em;
+  }
+  
+  .creator-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 10px;
+  }
+  
+  .creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .creator p {
+    margin-bottom: 8px;
+    font-size: 1.3em;
+    font-family: Formula1;
+    color: #ffffff;
+  }
+  
+  .linkedin {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .linkedin:hover {
+    transform: scale(1.1);
+  }
+  

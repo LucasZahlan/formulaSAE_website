@@ -1,0 +1,345 @@
+<!DOCTYPE php>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the directors, leads and senior members of Concordia Formula Racing.">
+    <title>Slideshow</title>
+    <link rel="stylesheet" href="slideshow.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.png">
+    <script defer type="module" src="java.js"></script>
+        <script src="assets/jquery-3.7.1.min.js"></script>
+
+   
+</head>
+<body>
+    <div class="wrapper">
+        <header class="hidden">
+            <a href="./" class="Logo">
+                <img class="headerLogo" src="assets/logo/headerLogo.png" alt="">
+            </a>
+
+            <nav>
+                <svg class="close" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="style=bulk">
+                    <g id="close">
+                    <path id="rectangle" d="M1.25 7.25C1.25 3.93629 3.93629 1.25 7.25 1.25H16.75C20.0637 1.25 22.75 3.93629 22.75 7.25V16.75C22.75 20.0637 20.0637 22.75 16.75 22.75H7.25C3.93629 22.75 1.25 20.0637 1.25 16.75V7.25Z" fill="white"/>
+                    <path id="vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M7.18298 7.18298C7.42696 6.93901 7.82253 6.93901 8.06651 7.18298L16.817 15.9335C17.061 16.1775 17.061 16.573 16.817 16.817C16.573 17.061 16.1775 17.061 15.9335 16.817L7.18298 8.06651C6.93901 7.82253 6.93901 7.42696 7.18298 7.18298Z" fill="#000000"/>
+                    <path id="vector (Stroke)_2" fill-rule="evenodd" clip-rule="evenodd" d="M16.817 7.18299C17.061 7.42697 17.061 7.82254 16.817 8.06652L8.0665 16.817C7.82252 17.061 7.42695 17.061 7.18298 16.817C6.939 16.573 6.93901 16.1775 7.18299 15.9335L15.9335 7.18298C16.1775 6.939 16.573 6.93901 16.817 7.18299Z" fill="#000000"/>
+                    </g>
+                    </g>
+                </svg>
+                    
+                <ul>
+                    <li><a class="burger-items hide" id="home" href="./">HOME</a></li>
+                    <li><a class="burger-items" id="aboutUs" href="./#scrollToIntro">ABOUT US</a></li>
+                    <li><a class="burger-items" id="history" href="history.html">TEAM HISTORY</a></li>
+                    <li><a class="burger-items" href="team.html">MEET THE TEAM</a></li>
+                    <li><a class="burger-items" href="sponsors.html">SPONSOR US</a></li>
+                    <li><a class="burger-items" id="contact" href="#scrollBottom">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <svg class="menu" id="desktop-menu" width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 32H0V26.6667H24V32ZM48 18.6667H0V13.3333H48V18.6667ZM48 5.33333H24V0H48V5.33333Z" fill="black"/>
+            </svg>
+        </header>
+
+        <!-- create space for the header -->
+        <section class="whiteSpace" style="height: 10vh;"></section> 
+        
+        
+        <section class="whiteSpace"></section>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="slideshow.css">
+</head>
+<body>
+<?php
+$category = isset($_GET['category']) ? $_GET['category'] : 'default';
+
+$slideshows = [
+    '2024' => [
+        ['image' => 'assets/HistoryPics/2024/453529125_8657381937624382_8304533645847703314_n.jpg', 'background' => '#2ecc71'],
+        ['image' => 'assets/HistoryPics/2024/3a7b2a34-f6c9-43c9-9a37-21ba5d7d760c.jpg', 'background' => '#2ecc71'],
+        ['image' => 'assets/HistoryPics/2024/4bbe1f70-21c3-43b6-8cfa-136706036dd2.jpg', 'background' => '#2ecc71'],
+        ['image' => 'assets/HistoryPics/2024/892ca448-f7cf-4e45-8747-bf9acb9f1d83.jpg', 'background' => '#2ecc71'],
+        ['image' => 'assets/HistoryPics/2024/978d0519-f3fb-4805-afdd-7a1e1d1150ca.jpg', 'background' => '#2ecc71'],
+        ['image' => 'assets/HistoryPics/2024/2725b303-5ddd-4dde-8bbf-fe4f130e0d33.jpg', 'background' => '#2ecc71'],
+        ['image' => 'assets/HistoryPics/2024/d1e740c1-a9e5-4cb4-9b24-7473e0121a13.jpg', 'background' => '#2ecc71'],      
+    ],
+    '2023' => [
+        ['image' => 'assets/HistoryPics/2023/1e285fca-e234-4b8f-8f74-b5579c169ddc.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2023/6d25b2b2-88c6-48b4-9888-616bdc4dd9da.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2023/2999bd9a-0129-4222-af5a-1ecec0318c0e.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2023/b185f718-b475-4bbd-856f-85e9119e3be0.jpg', 'background' => '#1abc9c'],
+    ],
+    '2022' => [
+        ['image' => 'assets/HistoryPics/2022/2dda6765-1cbc-464a-94c6-8e6a818d7bc7.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2022/6c997435-3001-47d2-af90-589dd7f93345.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2022/946c8111-7c20-49ba-8e01-72184730af03.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2022/c15540a0-fd51-4807-a9bb-66e2905b9e51.jpg', 'background' => '#1abc9c'],
+    ],
+    
+    '2019' => [
+        ['image' => 'assets/HistoryPics/2019/0b6b787b-74c1-4917-9127-442a81974638.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/4b5e88c2-c990-4cff-9d1a-65660eb2e125.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/9d82d3b1-e283-4df1-bd7b-2793f76e2226.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/43542e99-61f8-48e6-8f20-d435b2e03783.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/05921143-b27f-45d1-b4eb-edbdab6e6a41.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/98046937-24ba-4f9e-9bdd-d6a27e8df188.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/ad90a555-9193-43cf-923d-4a7d8940bf4a.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/c98fdd05-88a0-426e-a186-5057e13e10c5.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2019/d0eac20a-5561-4edf-b85c-2459ad4f091c.jpg', 'background' => '#1abc9c'],
+        
+    ],
+    '2018' => [
+        ['image' => 'assets/HistoryPics/2018/0d4e6700-b110-45e0-80cb-26d72a69beb0.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2018/7b582ccb-6cc4-403d-8116-3804628f9a7c.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2018/20eea80a-3dc9-45d9-8583-3d28148452fc.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2018/48b29d76-f5e6-4565-b76f-7f4c23188cf2.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2018/347415d4-ce50-4564-a60e-bfd2cee10e54.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2018/d6211fbb-ac7c-4e1f-9d88-8d8cb4451a8f.jpg', 'background' => '#1abc9c'],
+        
+    ],
+    '2017' => [
+        ['image' => 'assets/HistoryPics/2017/465722949_9357190067643562_8479645835108647242_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2017/465790934_9351772351518667_1330182570549498818_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2017/465796329_9357190060976896_1984750441537518677_n.jpg', 'background' => '#e74c3c'],
+       
+    ],
+    '2016' => [
+        ['image' => 'assets/HistoryPics/2016/5cd983cc-6f76-4695-b7e5-d8db856d631c.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2016/6a837513-7107-4f44-8a05-545391e94aa3.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2016/446e7d7b-a5b3-4a2c-a2da-52b7146a3422.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2016/9487c2a8-5e9d-48a8-a360-0e60a0cb09c1.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2016/027655bd-c027-4fc2-b162-ef51c8b9af04.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2016/e08d886d-afd8-4105-8a58-1ff3e3d7ef09.jpg', 'background' => '#1abc9c'],
+    ],
+    '2015' => [
+        ['image' => 'assets/HistoryPics/2015/55e9b861-5652-488c-93fc-31c3c4b4cf01.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2015/464778785_9291240987571804_1943016806305627917_n.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2015/464872538_9294515903910979_4968272790460414813_n.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2015/1b834f03-deb7-4f31-8cc6-20582bfe3b90.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2015/7a2581d6-9415-4576-b78f-7a60fc7f27f7.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2015/464870477_9294515897244313_8898954244803302870_n.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2015/42f5a084-3bec-44d7-8e9e-eb67f3e54e49.jpg', 'background' => '#1abc9c'],
+    ],
+'2014' => [ //should be car 121
+    
+        ['image' => 'assets/HistoryPics/2014/a2d407bd-414c-4f02-9a7d-bd3c4d4945f5.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2014/ad3ad571-c147-46dd-9833-322898768e02.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2014/12069364-9e6b-4cdd-83ae-567a5bcac8b2.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2014/464312074_9256317771064126_5117953791720301928_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2014/464342658_9256317774397459_5351176476809506460_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2014/464389350_9256317787730791_7675207358272841661_n.jpg', 'background' => '#e74c3c'],
+        
+    ],
+    '2013' => [
+        ['image' => 'assets/HistoryPics/2013/0a844a08-2bf4-4455-87aa-e933de388bf2.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2013/3b2d31c0-bc98-4080-8606-74e74b8d17ec.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2013/4cc8a178-c980-4918-b06f-ecc2254e9784.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2013/8a985ae6-c42c-46e0-b42c-973405f7ae03.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2013/2598e1c5-2dc7-4815-a423-62f5bb865ef3.jpg', 'background' => '#1abc9c'],
+        ['image' => 'assets/HistoryPics/2013/cc92e022-1caf-4fad-b76d-f9ba7cb47234.jpg', 'background' => '#1abc9c'],
+    ],
+    '2012' => [
+        ['image' => 'assets/HistoryPics/2012/462347463_9156948634334374_497623039022199378_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2012/462399201_9156948617667709_5094447951081545701_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2012/462399201_9156948621001042_7411375281230685482_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2012/462454329_9156948624334375_8975059102157495905_n.jpg', 'background' => '#e74c3c'],
+       
+    ],
+    '2011' => [
+        ['image' => 'assets/HistoryPics/2011/21ed17ec-b713-4c58-9204-c1ebadb0c123.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2011/784ac903-cce0-48ae-806d-482db3326079.jpg', 'background' => '#e74c3c'],
+    ],
+    '2010' => [
+        ['image' => 'assets/HistoryPics/2010/7130e09d-80c3-4bfd-8303-a3b0a547c236.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2010/a55be740-969e-4c71-a2e4-2df05b0fe6df.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2010/c48197fb-4eec-4da6-ae18-0c5ca3348be9.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2010/27afbdb1-61da-41c9-af8f-85cf9d137f0b.jpg', 'background' => '#e74c3c'],
+    ],
+    '2009' => [
+        ['image' => 'assets/HistoryPics/2009/babe4db2-e2d7-4fbb-bfc7-b79390e233c9.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2009/a7b4e16c-bf3c-434b-888b-a79c9b8c9ac6.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2009/0acb19d6-9eee-443d-9b7f-7dd4a56c8966.jpg', 'background' => '#e74c3c'],
+    ],
+    '2007' => [
+        ['image' => 'assets/HistoryPics/2007/e80b658f-3370-45f4-b263-149a0c507a38.jpg', 'background' => '#e74c3c'],
+    ],
+    '2002' => [
+        ['image' => 'assets/HistoryPics/2002/019f0f24-c798-4df2-884a-a3740fffe59d.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2002/a31f0187-27c4-41c9-92a0-c9ae0a376404.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/2002/b47b8611-bd46-48e2-a0f5-56ba7ee39dac.jpg', 'background' => '#e74c3c'],
+    ],
+    '1994' => [
+        ['image' => 'assets/HistoryPics/1994/12743de1-b2ad-4362-895a-3bb25c0feaee.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1994/ecf5f2d4-96f5-46c9-8430-f9bbcc6d24cf.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1994/30bfc2b6-5375-440e-a6fb-8f114fd0fdc7.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1994/15b20fa2-1468-48ba-aee7-5fcd2928b381.jpg', 'background' => '#e74c3c'],
+    ],
+    '1990' => [
+        ['image' => 'assets/HistoryPics/1990/465164433_9302407439788492_4707574936209795413_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/462714486_9182743918421512_4109772724164424587_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/464963566_9302407236455179_1049243897502087652_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/464970115_9302407233121846_589749748910113559_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/465024381_9302407229788513_6304742071728931891_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/465049484_9302407453121824_2516967848804292360_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/465052440_9302407429788493_6977992012334653955_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/465130473_9302407239788512_9126553093561752974_n.jpg', 'background' => '#e74c3c'],
+        ['image' => 'assets/HistoryPics/1990/465136500_9302407436455159_4813919311610601670_n.jpg', 'background' => '#e74c3c'],
+      
+    ],
+];
+
+// Get the slides and heading based on the category
+$slides = $slideshows[$category] ?? $slideshows['default'];
+$heading = ($category !== 'default') ? $category : 'Welcome';
+?>
+
+<!-- Modern Year Title -->
+<div class="year-title">
+    <h1><?= htmlspecialchars($heading); ?></h1>
+</div>
+
+<div class="slideshow-container">
+    <!-- Go Back Button Positioned on the Right -->
+    <a href="history.html" class="go-back-btn">Go Back</a>
+
+    <?php foreach ($slides as $index => $slide): ?>
+        <div class="slide" style="display: <?= $index === 0 ? 'block' : 'none'; ?>; background-color: <?= htmlspecialchars($slide['background']); ?>;">
+            <img src="<?= htmlspecialchars($slide['image']); ?>" alt="Slide <?= $index + 1; ?>" style="width: 100%; border-radius: 10px;">
+        </div>
+    <?php endforeach; ?>
+
+    <!-- Navigation Arrows -->
+    <div class="navigation">
+        <button class="arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="arrow next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Dot Indicators -->
+    <div class="dots-container">
+        <?php for($i = 0; $i < count($slides); $i++): ?>
+            <span class="dot <?= $i === 0 ? 'active' : ''; ?>" onclick="currentSlide(<?= $i; ?>)"></span>
+        <?php endfor; ?>
+    </div>
+</div>
+
+<script>
+let currentSlideIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    // Loop through slides and dots
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+function changeSlide(direction) {
+    const slides = document.querySelectorAll('.slide');
+    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(n) {
+    currentSlideIndex = n;
+    showSlide(currentSlideIndex);
+}
+
+// Initialize the first slide
+showSlide(currentSlideIndex);
+</script>
+
+
+
+
+
+<section class="contact" id="scrollBottom">
+                    <div class="title contact">CONTACT</div>
+                    <div class="contactFrame">
+                        <div class="socialAndCredentials hidden noMove left">
+                            <div class="credentials">
+                                <!-- credentials of the team -->
+                                <p class="contactText"> <a href="mailto:formula@ecaconcordia.ca" class="contactText mail">formula@ecaconcordia.ca</a></p>
+                                <p class="contactText"> 1455 Boul. de Maisonneuve O., H-022, Montreal, QC, H3G 1M8</p>
+                                <p class="contactText"> (514) 848-2424, Ext. 2865</p>
+                                <p class="contactText"> <a href="https://www.concordiasae.ca/" class="contactText mail">concordiasae.ca</a></p>
+                                                                                                
+                            </div>
+                            <div class="socials">
+                                <!-- three elements which link to the socials of SAE with social media icons -->
+                                <a class="link instagram" href="https://www.instagram.com/concordiaformularacing/">
+                                    <svg class="social instagram" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24" fill="white">
+                                        <path d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"></path>
+                                    </svg> 
+                                </a>
+                                <a class="link facebook" href="https://www.facebook.com/ConcordiaFormulaRacing/">
+                                    <svg class="social facebook" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30" fill="white">
+                                        <path  d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"></path>
+                                    </svg>
+                                </a>
+                                <a class="link linkedin" href="https://www.linkedin.com/company/concordiaformularacing/">
+                                    <svg class="social linkedin" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30" fill="white">
+                                        <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+                                    </svg>
+                                </a>
+
+                            </div>
+                        </div>
+                        
+                        <!-- this element designates the google map icon, and is located here for the position on the page -->
+                        <div id="map" class="hidden noMove right"></div>
+                    </div>
+                </section>
+
+                <section class="creators">
+  <p class="creators-title"><span>Designed By:</span></p>
+  <div class="creator-list">
+    <div class="creator">
+      <p>Leo Thomasson</p>
+      <a class="linkedin" href="https://www.linkedin.com/in/leo-thomasson-110243247/" target="_blank" rel="noopener">
+        <svg class="social linkedin" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="white">
+          <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+        </svg>
+      </a>
+    </div>
+    <div class="creator">
+      <p>Lucas Zahlan</p>
+      <a class="linkedin" href="https://www.linkedin.com/in/lucas-zahlan-555370293/" target="_blank" rel="noopener">
+        <svg class="social linkedin" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="white">
+          <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+            </div>
+        </div>  
+
+
+        <!-- this is a java, part of the program copy pasted for the google maps -->
+        <script>
+            (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+            key: "AIzaSyAM1xr-iAKQjB8sJ014XiIUX5Or8o3XBrc",
+            v: "weekly",
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+            });
+        </script>
+        
+
+    </body>
+</html>

@@ -12,19 +12,21 @@ menu.addEventListener('click', () => {
 close.addEventListener('click', () => {
     nav.classList.remove('open-nav');
 })
+
 //these final three closes the menu when an item of the menu is clicked
 const aboutUs = document.getElementById('aboutUs');
-const subsystems = document.getElementById('subsystems');
-const contact = document.getElementById('contact')
-subsystems.addEventListener('click', () => {
+const history = document.getElementById('history'); // Changed from subsystems to history
+const contact = document.getElementById('contact');
+
+history.addEventListener('click', () => {
   nav.classList.remove('open-nav');
-})
+});
 aboutUs.addEventListener('click', () => {
   nav.classList.remove('open-nav');
-})
+});
 contact.addEventListener('click', () => {
   nav.classList.remove('open-nav');
-})
+});
 
 
 

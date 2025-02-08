@@ -9,16 +9,19 @@
     src: url("assets/fonts/formula1-black-webfont.woff") format("woff");
 }
 @font-face { 
-    font-family: HelveticaNeue;
-    src: url("assets/fonts/helveticaneuemedium-webfont.woff") format("woff");
-}
-@font-face { 
     font-family: Futura;
     font-weight: 600;
     src: url("assets/fonts/futura_bold-webfont.woff") format("woff");
 }
-
-
+@font-face {
+    font-family: Lato-Regular;
+    font-weight: 400;
+    src: url("assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face { 
+    font-family: Lato-Light;
+    src: url("assets/fonts/Lato-Light.ttf") format("truetype");
+}
 /*this html element makes scrolling smooth for when a button is pressed */
 html {
     scroll-behavior: smooth;
@@ -27,8 +30,8 @@ html {
 /*general styles*/
 body {
     margin: 0;
-    font-family: HelveticaNeue;
-    background-color: #FFAE03;
+    font-family: Lato-Regular;
+    background-color: #932339;
     overflow-x: hidden;
 }
 .wrapper {
@@ -416,7 +419,9 @@ li {
 /* menu section adapted to different screen sizes */
 
 /*for the burger menu*/
-@media only screen and (max-width: 750px) {
+
+/* gets rid of the main menu logo at 200px */
+@media only screen and (max-width: 220px) {
     .Logo {
         display: none;
     }
@@ -429,11 +434,12 @@ li {
     }
 }
 
-/* this gets rid of the burger menu when screen size is over 750px, and formats the header */
-@media only screen and (min-width: 750px) {
+/* this gets rid of the burger menu when screen size is over 800px, and formats the header */
+@media only screen and (min-width: 800px) {
     .menu {
         display: none;
     }
+
 
     nav {
         transform: translateX(0);
@@ -742,3 +748,48 @@ section.theTitle {
     } */
 
 }
+
+
+
+.creators {
+    text-align: center;
+    padding: 10px;
+    
+  }
+  
+  .creators-title span {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.4em;
+  }
+  
+  .creator-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 10px;
+  }
+  
+  .creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .creator p {
+    margin-bottom: 8px;
+    font-size: 1.3em;
+    font-family: Formula1;
+    color: #ffffff;
+  }
+  
+  .linkedin {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .linkedin:hover {
+    transform: scale(1.1);
+  }
+  
