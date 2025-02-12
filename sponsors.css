@@ -79,6 +79,15 @@ section.sponsorIntro {
     .sponsorIntro h1 {
         font-size: 2.5em;
     }
+    section.introText {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    section.introText label {
+        margin: 1em auto; /* Centers the label horizontally */
+    }
+
 }
 
 
@@ -87,7 +96,6 @@ section.sponsorIntro {
 section.introText {
     background-color: #932339; 
     border-radius: 15px; /* Smooth, modern corners */
-    padding: 2em; /* Creates space around the text for readability */
     color: #333; /* Dark gray for a professional and softer contrast */
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
     font-family: Lato-Regular; /* Matches your general styles */
@@ -99,7 +107,9 @@ section.introText {
     max-width: 800px; /* Maintains a readable width on larger screens */
     display: flex;
     gap: 1em;
-   
+    @media only screen and (min-width: 1360px){
+    padding: 1.5em; /* Creates space around the text for readability */
+    }
 }
 
 

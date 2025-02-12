@@ -370,7 +370,7 @@ svg.introLogo text {
     }
 } 
 /* ------- */
-
+@media (min-width: 768px){
 .introFrame {
     display: flex;
     align-items: center;
@@ -381,9 +381,28 @@ svg.introLogo text {
 p.subhead {
     color: white;
     margin: -1rem 2rem 0 2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.6rem;
     text-align: justify;
+    font-family: Lato-Lignt;
+}
+}
+@media (max-width: 768px) {
+    .introFrame {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        
+    }
+
+    p.subhead {
+        color: white; /* Ensures text remains white */
+        margin: 1rem 1rem 0 1rem; /* Reduce margins */
+        font-size: 1.3rem; /* Decrease font size */
+        line-height: 1.4rem; /* Reduce line height */
+        text-align: center; /* Center text */
+        font-family: Lato-Regular;
+    }
 }
 
 
