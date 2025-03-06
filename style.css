@@ -247,49 +247,6 @@ span {
     color: #932339;
 } */
 
-.PageTitle {
-    position: fixed;
-    justify-self: center;
-    align-self: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
-.PageTitle h1 {
-    width: fit-content;
-    font-family: Formula1;
-    font-weight: 900;
-    font-size: 12vw;
-    color: #932339;
-    text-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-    text-align: center;
-
-}
-.PageTitle .Racing {
-    color: #FFAE03;
-    font-family: Futura-Bold;
-    font-size: 8vw;
-    height: fit-content;
-}
-@media only screen and (min-width: 1000px) {
-    .PageTitle h1 {
-        font-size: 7.3em;
-    }
-    .PageTitle .Racing {
-        font-size: 0.65em;
-    }
-} 
-@media only screen and (max-width: 750px) {
-    .PageTitle h1 {
-        font-size: 14vw;
-    }
-    .PageTitle .Racing {
-        font-size: 9vw;
-    }
-} 
-
-
 .arrowFrame {
     position: absolute;
     display: flex;
