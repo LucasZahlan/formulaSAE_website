@@ -142,6 +142,45 @@ input {
 }
 
 
+/* Mobile: stack, readable text, ty gpt */
+@media (max-width: 1300px) {
+  section.introText {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 100%;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  section.introText label {
+    margin: 0 1rem;
+    max-width: none;
+    width: auto;
+  }
+
+  /* The scrollable text box */
+  .textFrame {
+    max-height: 40vh;            /* visible area on phones */
+    overflow-y: auto;            /* enable scroll */
+    -webkit-overflow-scrolling: touch;  /* smooth iOS scroll */
+    padding: 1rem;
+    background: rgba(230,230,230,0.35);
+  }
+
+  /* Make the text readable on small screens */
+  label p {
+    font-size: clamp(0.95rem, 3.6vw, 1.05rem);
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  /* Put the CTA underneath and keep it tidy */
+  .sponsorshipPackage {
+    align-self: center;
+    width: min(26rem, 90%);
+    margin: 0 auto;
+  }
+}
 
 
 
