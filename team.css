@@ -125,15 +125,21 @@ section.directors {
     flex-wrap: wrap;
     justify-content: center;
 }
-.profiles.director {
-    flex-wrap: nowrap;
-    /* justify-content: unset; */
+@media (min-width: 1011px) {
+  .profiles.director { flex-wrap: wrap; }
 }
+@media (max-width: 900px) {
+  .profiles.director .profile { flex-basis: 19rem; max-width: 19rem; }
+}
+@media (max-width: 780px) {
+  .profiles.director .profile { flex-basis: 17rem; max-width: 17rem; }
+}
+
 .profile {
     display: flex;
     flex-direction: column;
     /* margin: 0 0.5em 0 0.5em; */
-    max-width: 20em;
+    max-width: 22em;
     padding: .5em;
     width: 50%;
     box-sizing: border-box;
@@ -141,14 +147,30 @@ section.directors {
 @media only screen and (max-width: 1010px){
     .profiles.director {
         flex-wrap: wrap !important;
+        justify-content: center;
+        gap: 1.25rem;
     }
     .profiles {
         justify-content: center;
     }
     .profile {
-        max-width: 22em;
+        max-width: 22em
+        
     }
 }
+/* Override just for director tiles */
+.profiles.director .profile {
+  width: auto;        /* cancel out width:50% from .profile */
+  flex: 0 0 22em;     /* tile width, tweak value */
+  max-width: 22em;    /* cap size */
+box-sizing: border-box;
+}
+/* Directors: taller images to emphasize importance */
+.profiles.director .imageWrapper img {
+  height: 25em;   /* was 20em for normal profiles */
+}
+
+
 /* this class scrolls to requested profile 8em units above the profile, so the header doesn't hide the profile */
 .goToProfile {
     position: absolute;
@@ -215,6 +237,15 @@ section.directors {
     width: 100%;
     height: 20em;
 }
+/* Top-anchor variant for portraits that sit too low */
+.imageWrapper img.portrait--top {
+  object-position: 50% 25%;  /* X% Y% */
+}
+
+.imageWrapper img.portrait--top23 {
+  object-position: 50% 35%;  /* X% Y% */
+}
+
 
 
 @media only screen and (max-width: 500px){
