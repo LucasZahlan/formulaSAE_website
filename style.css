@@ -108,7 +108,7 @@ a {
     width: 100vw;
     height: 100vh;
     z-index: 0; /* Place behind all other content */
-    background: url('assets/HistoryPics/2024/IMG_4242.JPG') no-repeat center center;
+    background: url('assets/backgrounds/homepic2025p1.jpg') no-repeat center center;
     background-size: cover;
 }
 
